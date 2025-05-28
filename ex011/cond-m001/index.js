@@ -1,5 +1,5 @@
 var agora = new Date()
-var diaSem = agora.get()
+var diaSem = agora.getDay()
 
 console.log('Hoje é ')
 switch (diaSem) {
