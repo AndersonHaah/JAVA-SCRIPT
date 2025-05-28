@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+    <style>
+        body {
+            background-color: gray;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Qual a sua nacionalidade?</h1>
+    <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificar" onclick="Resultado()">
+    <div id="nacionalidade">
+
+
+    </div>
+
+    <script>
+
+        function Resultado() {
+            var p = document.querySelector('input#pais')
+            var nac = document.querySelector('#nacionalidade')
+            p = String(p.value)
+
+            if ( p == `Brasil`) {
+                nac.innerHTML = 'Eu também sou <strong>Brasileiro!!</strong>'
+            } else {
+                nac.innerHTML = 'É um prazer te conhecer, de qual país você é?'
+            }
+
+        }
+    </script>
+</body>
+</html>
