@@ -1,56 +1,32 @@
-function clicar() {
-    var tn1 = window.document.querySelector('input#txtn1')
-    var tn2 = window.document.querySelector('input#txtn2')
-    var tn3 = window.document.querySelector('input#txtn3')
-    var n1 = Number(tn1.value)
-    var n2 = Number(tn2.value)
-    var n3 = Number(tn3.value)
-    var res = window.document.querySelector('div#res')
+function contar() {
+    let ini = document.getElementById('txti')
+    let fim = document.getElementById('txtf')
+    let passo = document.getElementById('txtp')
+    let res = document.getElementById('res')
 
-    if (n3 <= 0) {
-        alert('[ERRO] O numero de passos não pode ser negativo ou 0, alterando para 1')
-        n3 = 1
+    if (ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+        res.innerHTML = 'Impossivel contar'
+    } else {
+        res.innerHTML = `Contando: <br>`
+        let i = Number(ini.value)
+        let f = Number(fim.value)
+        let p = Number(passo.value)
+            if (p <= 0) {
+                window.alert ('[ERRO] o número de passos não pode ser 0, redefinindo para 1.')
+                p = 1
+            }
+            if (i < f) {
+                for (let c = i ; c <= f ; c += p) {
+                    res.innerHTML += ` ${c} \u{1F449}`
+                }
+            if (i > f) {
+                for (let c = i ; c >= f ; c -= p) {
+                    res.innerHTML += ` ${c} \u{1F449}`
+                }
+            }
+            }
+            res.innerHTML += `\u{1F3C1}`
+            
+
     }
-        res.innerHTML = 'Contando: '
-
-    if (n1 <= n2){
-        for (var s = n1; s <= n2 ; s += n3) {
-            res.innerHTML += `${s} 👉 ` 
-        } 
-            }else  {
-                for (var s = n1; s >= n2 ; s -= n3)
-                    res.innerHTML += ` ${s} 👉`
-        }
-            res.innerHTML += '🏁'
 }
-
-        
-    
-
-
-    
-/*     CODIGO ANTES DA AJUDA
-------------------------------------------PARTE CORRETA DO CODIGO
-        function clicar() {
-        var tn1 = window.document.querySelector('input#txtn1')
-        var tn2 = window.document.querySelector('input#txtn2')
-        var tn3 = window.document.querySelector('input#txtn3')
-        var n1 = Number(tn1.value)
-        var n2 = Number(tn2.value)
-        var n3 = Number(tn3.value)
-        var res = window.document.querySelector('div#res')
-
-------------------------------------------PARTE ERRADA 
-        var s = n1 + n3------------------------------------- NÃO HAVIA A NECESSIDADE DE FAZER A SOMA ANTES DA REPETIÇÃO, POR QUE ELA FICAVA EM LOOP
-    
-        while (n3 == 0){ ------------------------------------------------------------ NESTA CONDIÇÃO MESMO SE A PESSOA DIGITASSE NADA, O ALERTA SERIA SOADO, O CERTO ERA TROCAR O WHILE PELO IF E BOTAR N3 <= 0
-            alert('[ERRO] o numero de passos não pode ser 0, adicionando 1.')
-            n3++ --------------------------------------------------------------------- HÁ UMA GRANDE CHANCE DE ISSO FUNCIONAR, PORÉM O MAIS TRANQUILO É FAZER N3 = 1
-        }
-
-        for (var final = s ; n1 < n2 ; n1 + n3){ -------------------------------- O CERTO É N1 <= N2 PARA QUE NÃO FIQUE EM LOOP -- O FATO DO N1 + N2 ESTÁ ESCRITO ASSIM, FARIA COM QUE O RESULTADO FOSSE SÓ O FINAL, PARA ELE APARECER EM FORMA DE CONTAGEM, O OPERADOR CORRETO É O +=
-            res.innerText = `${s}` ---------------------------------------------- ESTA PARTE ESTAVA CORRETA
-        }
-
-    PARA ADICIONAR EMOJI É SÓ COPIAR E COLAR O EMOJI
-*/
