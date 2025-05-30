@@ -12,3 +12,5 @@ console.log (`Caso deseje adicionar mais algum numero, por favor digite num.push
 console.log(`Há uma forma de descobrir em qual chave/key está cada valor, neste caso usamos o 'array.indexOf(elemento)', no momento quero saber em qual key está o numero 7, e usando esse comando eu descubro que o elemento 7 ta na key ${num.indexOf(7)}!`)
 
 console.log(`Mas caso o elemento pedido não exista, o JS me voltará com valor negativo, por exemplo: 'num.indexOf(9) não existe, então ele está me voltando com o valor ${num.indexOf(9)}!`)
+
+console.log(`${num}`)
